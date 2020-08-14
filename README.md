@@ -18,6 +18,7 @@ $ ] add https://github.com/tallakt/StackedPlot.git
 A simple usage of `plotstacked` is
 
 ```julia
+using StackedPlot
 t = 0:0.01:10
 plotstacked(t, trace(sin.(t)), trace(cos.(t)), trace(tan.(t)))
 ```
@@ -26,7 +27,6 @@ You can add named parameters to every call to `trace(...)` and these are passed
 on to the call to `plot(...)`. Like:
 
 ```julia
-t = 0:0.01:10
 plotstacked(t, trace(sin.(t), label="sin"), trace(cos.(t), label="cos"), trace(tan.(t), label="tan"))
 ```
 
@@ -34,7 +34,6 @@ plotstacked(t, trace(sin.(t), label="sin"), trace(cos.(t), label="cos"), trace(t
 The default height weight is `1.0`.
 
 ```julia
-t = 0:0.01:10
 plotstacked(t, trace(sin.(t), 2.0, label="sin"), trace(cos.(t), label="cos"), trace(tan.(t), label="tan"))
 ```
 
@@ -42,7 +41,6 @@ To add a parameter to all the traces, you may add this to the `plotstacked(...)`
 
 
 ```julia
-t = 0:0.01:10
 plotstacked(t, trace(sin.(t)), trace(cos.(t)), trace(tan.(t)), ylims=(-1,1), legend=false)
 ```
 
