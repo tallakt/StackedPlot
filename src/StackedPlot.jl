@@ -1,5 +1,7 @@
 module StackedPlot
 
+using Plots
+
 export plotstacked, trace
 
 function plotstacked(x, traces...; kwargs...)
