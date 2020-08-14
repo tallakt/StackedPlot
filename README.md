@@ -10,7 +10,7 @@ top of each other, with a common time scale x-axis at the bottom.
 ## Installation
 
 ```
-$ ] add https://github.com/tallakt/StackedPlot.git
+julia> ] add https://github.com/tallakt/StackedPlot.git
 ```
 
 ## Usage
