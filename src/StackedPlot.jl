@@ -6,8 +6,8 @@ export plotstacked, trace
 
 function plotstacked(x, traces...; kwargs...)
   n = length(traces)
-  subplots = map(t -> Plots.plot(x, t[1]; t[3]..., kwargs..., xaxis=false), traces[1:end-1])
-  bottomplot = Plots.plot(x, traces[end][1]; traces[end][3]..., kwargs..., xaxis = true);
+  subplots = map(t -> Plots.plot(x, t[1]; t[3]..., kwargs..., showaxis = :y), traces[1:end-1])
+  bottomplot = Plots.plot(x, traces[end][1]; traces[end][3]..., kwargs..., showaxis = :xy);
   heights = map(t -> t[2], traces);
   normalized_heights = heights ./ sum(heights);
   layout = grid(n, 1, heights = normalized_heights)
