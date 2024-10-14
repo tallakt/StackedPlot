@@ -10,7 +10,7 @@ function plotstacked(x, traces...; kwargs...)
   bottomplot = Plots.plot(x, traces[end][1]; traces[end][3]..., kwargs..., showaxis = :xy);
   heights = map(t -> t[2], traces);
   normalized_heights = heights ./ sum(heights);
-  layout = grid(n, 1, heights = normalized_heights)
+  layout = n < 2 ? grid(1,1) : grid(n, 1, heights = normalized_heights)
   Plots.plot(subplots..., bottomplot, layout = layout)  
 end
 
